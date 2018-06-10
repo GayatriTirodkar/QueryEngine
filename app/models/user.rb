@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Phony
+  include Sunspot::Mongoid
   extend Enumerize
 
   field :first_name, type: String
@@ -13,12 +14,29 @@ class User
   field :mobile_number, type: String
   field :email_id, type: String
   
+  #index({ first_name: 'text' }, { unique: false})
+
   enumerize :gender, in: %w(male female m f Male Female M F), scope: true
 
   validates :first_name, :last_name, presence: true
   validates :age, length: {maximum: 3}, numericality: {only_integer: true}, :on => :create
   validates :gender, inclusion: {in: %w(male female m f Male Female M F), message: "Please specify valid input"}
-  validates :mobile_number, phony_plausible: true
-  validates :email_id, uniqueness: true
+  validates :mobile_number, phony_plausible: true, uniqueness: true
+  validates :email_id, presence: true, uniqueness: true
+
+  searchable do
+    text :first_name, :last_name, :age, :gender, :qualification, :occupation, :address, :mobile_number, :email_id
+  end
+  
+  Sunspot.index(User.all) 
+=begin
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['first_name LIKE ?', "%#{search}%"])
+    else
+     find(:all)
+    end
+  end
+=end
 
 end

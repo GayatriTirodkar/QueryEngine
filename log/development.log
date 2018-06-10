@@ -696,3 +696,1261 @@ MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.039
 Completed 200 OK in 916ms (Views: 758.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:06:13 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.658704556s
+  Rendered users/index.html.erb within layouts/application (1152.7ms)
+Completed 200 OK in 1976ms (Views: 1612.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=gayatri" for 127.0.0.1 at 2018-06-10 19:06:27 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"gayatri"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[:all, {"conditions"=>["name LIKE ?", "%gayatri%"]}]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.881239685s
+Completed 404 Not Found in 909ms
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document(s) not found for class User with id(s) all, {:conditions=>["name LIKE ?", "%gayatri%"]}.
+summary:
+  When calling User.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): all, {:conditions=>["name LIKE ?", "%gayatri%"]} ... (2 total) and the following ids were not found: all, {:conditions=>["name LIKE ?", "%gayatri%"]}.
+resolution:
+  Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples.):
+  
+app/models/user.rb:28:in `search'
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/users?utf8=%E2%9C%93&search=gayatri" for 127.0.0.1 at 2018-06-10 19:08:23 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"gayatri"}
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[:all, {"conditions"=>["name LIKE ?", "%gayatri%"]}]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001400615s
+Completed 404 Not Found in 66ms
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document(s) not found for class User with id(s) all, {:conditions=>["name LIKE ?", "%gayatri%"]}.
+summary:
+  When calling User.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): all, {:conditions=>["name LIKE ?", "%gayatri%"]} ... (2 total) and the following ids were not found: all, {:conditions=>["name LIKE ?", "%gayatri%"]}.
+resolution:
+  Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples.):
+  
+app/models/user.rb:28:in `search'
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:08:28 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.034887181s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000595044s
+  Rendered users/index.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 306ms (Views: 304.1ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=Gayatri" for 127.0.0.1 at 2018-06-10 19:08:37 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Gayatri"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[:all, {"conditions"=>["name LIKE ?", "%Gayatri%"]}]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001325772s
+Completed 404 Not Found in 6ms
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document(s) not found for class User with id(s) all, {:conditions=>["name LIKE ?", "%Gayatri%"]}.
+summary:
+  When calling User.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): all, {:conditions=>["name LIKE ?", "%Gayatri%"]} ... (2 total) and the following ids were not found: all, {:conditions=>["name LIKE ?", "%Gayatri%"]}.
+resolution:
+  Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples.):
+  
+app/models/user.rb:28:in `search'
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:34:01 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (348.6ms)
+Completed 500 Internal Server Error in 367ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `autocomplete_user_first_name_users_path' for #<#<Class:0x007f87782457f0>:0x0055dff2282bc0>
+Did you mean?  autocomplete_user_first_name_post_index_path):
+    3: <h1>Users</h1>
+    4: 
+    5: <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+    6:     <%= text_field_tag :search, params[:search], placeholder: "Search", data: { autocomplete: autocomplete_user_first_name_users_path } %>
+    7:     <%= submit_tag "Search", :name => nil %>
+    8: <% end %>
+    9: 
+  
+app/views/users/index.html.erb:6:in `block in _app_views_users_index_html_erb__1973489233194964044_70109906481780'
+app/views/users/index.html.erb:5:in `_app_views_users_index_html_erb__1973489233194964044_70109906481780'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:35:19 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0012251769999999998s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.00041439s
+  Rendered users/index.html.erb within layouts/application (11.3ms)
+Completed 500 Internal Server Error in 254ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'text/css'
+Checked in these paths: 
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/config
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/images
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/stylesheets
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:17
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2590025612333395337_69856637625140'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:49:37 +0530
+  
+ActionController::RoutingError (uninitialized constant FirstName):
+  
+app/controllers/users_controller.rb:3:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:51:30 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001273997s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000465336s
+  Rendered users/index.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 222ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'text/css'
+Checked in these paths: 
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/config
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/images
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/stylesheets
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:17
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___90083223306317380_47139075214940'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:53:47 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.035231775s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.00076121s
+  Rendered users/index.html.erb within layouts/application (47.1ms)
+Completed 500 Internal Server Error in 255ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'text/css'
+Checked in these paths: 
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/config
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/images
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/stylesheets
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:17
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4597577125192033155_47311164466480'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:55:22 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.002043393s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000646063s
+  Rendered users/index.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 247ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'text/css'
+Checked in these paths: 
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/config
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/images
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/stylesheets
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:17
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2470493244505513504_47249272974120'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:55:59 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0012528550000000002s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0005809719999999999s
+  Rendered users/index.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 204ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'text/css'
+Checked in these paths: 
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/config
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/images
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/stylesheets
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:17
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___4527376233257110032_70229125404580'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:57:12 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 51ms
+
+
+  
+SyntaxError (/home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/views/users/index.html.erb:6: syntax error, unexpected ')'
+rch], placeholder: "Search", );@output_buffer.safe_append='
+                              ^
+/home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/views/users/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/views/users/index.html.erb:55: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/views/users/index.html.erb:57: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/users/index.html.erb:6: syntax error, unexpected ')'
+app/views/users/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/views/users/index.html.erb:55: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/users/index.html.erb:57: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:57:41 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001259487s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0005485619999999999s
+  Rendered users/index.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 268ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'text/css'
+Checked in these paths: 
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/config
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/images
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/stylesheets
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:17
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___3681720344477841089_47021606500500'
+Started GET "/" for 127.0.0.1 at 2018-06-10 19:58:36 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001069487s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0006161820000000001s
+  Rendered users/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 459ms (Views: 421.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=gayatri" for 127.0.0.1 at 2018-06-10 19:58:43 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"gayatri"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[:all, {"conditions"=>["name LIKE ?", "%gayatri%"]}]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.620645295s
+Completed 404 Not Found in 797ms
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document(s) not found for class User with id(s) all, {:conditions=>["name LIKE ?", "%gayatri%"]}.
+summary:
+  When calling User.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): all, {:conditions=>["name LIKE ?", "%gayatri%"]} ... (2 total) and the following ids were not found: all, {:conditions=>["name LIKE ?", "%gayatri%"]}.
+resolution:
+  Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples.):
+  
+app/models/user.rb:28:in `search'
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:11:46 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 22ms
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    28:   </thead>
+    29: 
+    30:   <tbody>
+    31:     <% @users.each do |user| %>
+    32:       <tr>
+    33:         <td><%= user.first_name %></td>
+    34:         <td><%= user.last_name %></td>
+  
+app/views/users/index.html.erb:31:in `_app_views_users_index_html_erb__2644054130329174034_70185102225080'
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:12:51 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 83ms
+
+
+  
+NoMethodError (undefined method `findall' for User:Class
+Did you mean?  find):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:18:13 +0530
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>:all}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.343393669s
+Completed 404 Not Found in 938ms
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document(s) not found for class User with id(s) all.
+summary:
+  When calling User.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): all ... (1 total) and the following ids were not found: all.
+resolution:
+  Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples.):
+  
+app/models/user.rb:30:in `search'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users?utf8=%E2%9C%93&search=gayatri" for 127.0.0.1 at 2018-06-10 20:19:22 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"gayatri"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[:all, {"conditions"=>["first_name LIKE ?", "%gayatri%"]}]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0008272939999999999s
+Completed 404 Not Found in 5ms
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document(s) not found for class User with id(s) all, {:conditions=>["first_name LIKE ?", "%gayatri%"]}.
+summary:
+  When calling User.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): all, {:conditions=>["first_name LIKE ?", "%gayatri%"]} ... (2 total) and the following ids were not found: all, {:conditions=>["first_name LIKE ?", "%gayatri%"]}.
+resolution:
+  Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples.):
+  
+app/models/user.rb:28:in `search'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:21:54 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 223ms
+
+
+  
+NameError (undefined local variable or method `search' for #<UsersController:0x005607994a3ed0>):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:21:57 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 259ms
+
+
+  
+NameError (undefined local variable or method `search' for #<UsersController:0x007fb0882adb78>):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:23:07 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.066229078s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0006464410000000001s
+  Rendered users/index.html.erb within layouts/application (77.9ms)
+Completed 500 Internal Server Error in 608ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery-ui/autocomplete' with type 'application/javascript'
+Checked in these paths: 
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/config
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/images
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/assets/stylesheets
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___3032231931347676061_47021831761400'
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:24:16 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0020101999999999997s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0005689969999999999s
+  Rendered users/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 456ms (Views: 395.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 20:27:35 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (149.0ms)
+  Rendered users/new.html.erb within layouts/application (151.1ms)
+Completed 200 OK in 505ms (Views: 442.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:27:51 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001468826s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000529172s
+  Rendered users/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 47ms (Views: 44.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 20:28:31 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8q2tNQAiUeg6qfa7hzoL08G8kYg+pXMhvBpLSJgTVde5lvrTFUo5M85YJAR5DZWRp7SNg3L1nn+fGVkN6IYkqA==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"26", "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"+91 8779641757", "email_id"=>"ggtirodkar@gmail.com"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"ggtirodkar@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000792388s
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.8ms)
+  Rendered users/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 42ms (Views: 34.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:29:14 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000766704s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000580584s
+  Rendered users/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 51ms (Views: 48.9ms)
+
+
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.createIndexes | STARTED | {"createIndexes"=>"users", "indexes"=>[{"key"=>{"first_name"=>1}, "unique"=>false, "name"=>"first_name_1"}]}
+MONGODB | localhost:27017 | user_search_app_development.createIndexes | SUCCEEDED | 1.1400759459999998s
+MONGOID: Created indexes on User:
+MONGOID: Index: {:first_name=>1}, Options: {:unique=>false}
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.042745155s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000754853s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000580271s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000643562s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000607688s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.00057628s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000561561s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"$text"=>{"$search"=>"Gayatri"}}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | user_search_app_development.find | FAILED | text index required for $text query (27) | 0.031855747999999996s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001338994s
+Started GET "/users" for 127.0.0.1 at 2018-06-10 20:54:25 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 54ms
+
+
+  
+NoMethodError (undefined method `searchable' for User:Class
+Did you mean?  reachable?):
+  
+app/models/user.rb:26:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for 127.0.0.1 at 2018-06-10 20:55:12 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 68ms
+
+
+  
+NoMethodError (undefined method `search' for User:Class
+Did you mean?  each):
+  
+app/models/user.rb:26:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for 127.0.0.1 at 2018-06-10 20:55:34 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 50ms
+
+
+  
+NoMethodError (undefined method `search' for User:Class
+Did you mean?  each):
+  
+app/models/user.rb:26:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for 127.0.0.1 at 2018-06-10 20:57:48 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 48ms
+
+
+  
+NoMethodError (undefined method `search' for User:Class
+Did you mean?  each):
+  
+app/models/user.rb:26:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 20:57:54 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 28ms
+
+
+  
+NoMethodError (undefined method `search' for User:Class
+Did you mean?  each):
+  
+app/models/user.rb:26:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 21:02:57 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 26ms
+
+
+  
+NameError (uninitialized constant Sunspot::Mongo):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 21:04:31 +0530
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.028349217s
+  [1m[32mSOLR Request (2217.0ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (252.6ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+  [1m[32mSOLR Request (961.3ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 200 OK in 5549ms (Views: 1563.9ms | Solr: 2469.6ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=gayatri" for 127.0.0.1 at 2018-06-10 21:04:48 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"gayatri"}
+  [1m[32mSOLR Request (329.3ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"gayatri"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1cf7b8ec8d42545ab74e11'), BSON::ObjectId('5b1cfc38ec8d42638eab1c69')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.527700708s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 886ms (Views: 24.7ms | Solr: 329.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=Prasad" for 127.0.0.1 at 2018-06-10 21:05:06 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Prasad"}
+  [1m[32mSOLR Request (6.9ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"Prasad"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 35.0ms | Solr: 968.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=Prasad" for 127.0.0.1 at 2018-06-10 22:07:46 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Prasad"}
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.10099377s
+  [1m[32mSOLR Request (257.3ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (37.7ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"Prasad"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text last_name_text age_text gender_text qualification_text occupation_text address_text mobile_number_text email_id_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (9.4ms)
+  [1m[32mSOLR Request (581.0ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 200 OK in 1922ms (Views: 453.6ms | Solr: 295.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=" for 127.0.0.1 at 2018-06-10 22:08:32 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  [1m[32mSOLR Request (163.4ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1cf7b8ec8d42545ab74e11'), BSON::ObjectId('5b1cfc38ec8d42638eab1c69')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000831219s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 193ms (Views: 24.8ms | Solr: 163.4ms)
+
+
+Started DELETE "/users/5b1cf7b8ec8d42545ab74e11" for 127.0.0.1 at 2018-06-10 22:08:38 +0530
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SfTJRPvsXFVTKNDCJ1SmxRtw4wDPwM2Mf3L+TDOWQfkCz56i7oQ0jqfZAn3ZYziHfXj/C4OQINJccewJQwMwhg==", "id"=>"5b1cf7b8ec8d42545ab74e11"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cf7b8ec8d42545ab74e11')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.020493361s
+MONGODB | localhost:27017 | user_search_app_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('5b1cf7b8ec8d42545ab74e11')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | user_search_app_development.delete | SUCCEEDED | 0.495202368s
+  [1m[32mSOLR Request (6.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users
+  [1m[32mSOLR Request (232.7ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 762ms
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:08:38 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (10.5ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1cfc38ec8d42638eab1c69')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001239743s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 46ms (Views: 29.3ms | Solr: 249.6ms)
+
+
+Started DELETE "/users/5b1cfc38ec8d42638eab1c69" for 127.0.0.1 at 2018-06-10 22:08:44 +0530
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7ypb6rVb4yxpMjqBBnU7JqKr8bJi/jyq8+aCzGWPm+qkEQwMoDOL953D6D74QqVkxKPtuS6u0fTQ5ZCJFRrqlQ==", "id"=>"5b1cfc38ec8d42638eab1c69"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.00042287s
+MONGODB | localhost:27017 | user_search_app_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | user_search_app_development.delete | SUCCEEDED | 0.160178605s
+  [1m[32mSOLR Request (39.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users
+  [1m[32mSOLR Request (454.6ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 659ms
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:08:45 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (5.6ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000716231s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 36.1ms | Solr: 499.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 22:08:47 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (606.7ms)
+  Rendered users/new.html.erb within layouts/application (627.2ms)
+Completed 200 OK in 686ms (Views: 665.2ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 22:10:42 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rZDl7IvRs+KZpIsIaEFVgKO4Yz516UCG8knyNTrvdvbWdb4xFzJLzXWy30nOcfToR3QAypNEE9gLm6edKWkx/g==", "user"=>{"first_name"=>"Kannan", "last_name"=>"Piedy", "age"=>"29", "gender"=>"Male", "qualification"=>"MS", "occupation"=>"Big Data Engineer", "address"=>"312, Nagarjuna Appartment, Street No.12, Manikonda, Hyderabas", "mobile_number"=>"8983161404", "email_id"=>"kannan.piedy@pre.com"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"kannan.piedy@pre.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.203887778s
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.8ms)
+  Rendered users/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 257ms (Views: 44.1ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 22:10:54 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FzPZYBadJz0Aty3E5vLIYcL+hHyqO3Rd1ymUTsS0LPNcCI6GA/VP5vRG/3sYxVYjpPaYd+ZrmQP0KoYLtCFdjA==", "user"=>{"first_name"=>"Kannan", "last_name"=>"Piedy", "age"=>"29", "gender"=>"Male", "qualification"=>"MS", "occupation"=>"Big Data Engineer", "address"=>"312, Nagarjuna Appartment, Street No.12, Manikonda, Hyderabas", "mobile_number"=>"+91 8983161404", "email_id"=>"kannan.piedy@pre.com"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"kannan.piedy@pre.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.032387862s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d5496ec8d42519d6c3399'), "first_name"=>"Kannan", "last_name"=>"Piedy", "age"=>29, "gender"=>"Male", "qualification"=>"MS", "occupation"=>"Big Data Engineer", "address"=>"312, Nagarjuna Appar...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.118115711s
+  [1m[32mSOLR Request (11.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d5496ec8d42519d6c3399
+  [1m[32mSOLR Request (559.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 734ms
+
+
+Started GET "/users/5b1d5496ec8d42519d6c3399" for 127.0.0.1 at 2018-06-10 22:10:55 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d5496ec8d42519d6c3399"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d5496ec8d42519d6c3399')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001450914s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 50ms (Views: 30.3ms | Solr: 570.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:10:58 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (8.7ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0006656020000000001s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 49ms (Views: 31.9ms | Solr: 589.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 22:11:00 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.2ms)
+  Rendered users/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 52ms (Views: 50.5ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 22:12:32 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9NX/05aXlUSSD7hvzIPEBLRYKHvWxDQ4fN72aPxBBs6PMKQOCnRta34Z7C5qs2VsUJRLjzBpZ2aFDKPA78dBxg==", "user"=>{"first_name"=>"Gauri", "last_name"=>"Tirodkar", "age"=>"23", "gender"=>"Female", "qualification"=>"BE Comps", "occupation"=>"Manager", "address"=>"Prasad Building, Mahant Road, Vile Parle, Mumbai, Maharashtra", "mobile_number"=>"+91 8097357342", "email_id"=>"qwertty@tyuu.in"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"qwertty@tyuu.in"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0006679720000000001s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), "first_name"=>"Gauri", "last_name"=>"Tirodkar", "age"=>23, "gender"=>"Female", "qualification"=>"BE Comps", "occupation"=>"Manager", "address"=>"Prasad Building, Mah...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.0006241899999999999s
+  [1m[32mSOLR Request (13.8ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d54f8ec8d42519d6c339a
+  [1m[32mSOLR Request (610.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 634ms
+
+
+Started GET "/users/5b1d54f8ec8d42519d6c339a" for 127.0.0.1 at 2018-06-10 22:12:33 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d54f8ec8d42519d6c339a"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d54f8ec8d42519d6c339a')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000679349s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 31.3ms | Solr: 624.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:12:36 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (10.0ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001078236s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 41ms (Views: 25.5ms | Solr: 10.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 22:12:38 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.6ms)
+  Rendered users/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 41ms (Views: 39.0ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 22:13:13 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NvZmx2FMa/Z3Q2Ihlubc26v+N2flBnnuESFV3jHPjs9NEz0a/a+T2ZtVNmAw1n2zTzJUkwOrKrDo8wB2IknJxw==", "user"=>{"first_name"=>"Nanda", "last_name"=>"", "age"=>"55", "gender"=>"F", "qualification"=>"BSc", "occupation"=>"HomeMaker", "address"=>"Vile Parle", "mobile_number"=>"", "email_id"=>""}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>""}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000838356s
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.0ms)
+  Rendered users/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 35ms (Views: 28.6ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 22:13:26 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FhOoFcFXsHxjvGF3GXvkoIKWRUXVLzdhYbvz6NUYmshdKP/z1D/Yp5dNs8jnTHri5J5ZTpl/2j9CuOGtpY3rtw==", "user"=>{"first_name"=>"Nanda", "last_name"=>"Tirodkar", "age"=>"55", "gender"=>"F", "qualification"=>"BSc", "occupation"=>"HomeMaker", "address"=>"Vile Parle", "mobile_number"=>"", "email_id"=>""}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>""}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0008286760000000001s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d552eec8d42519d6c339b'), "first_name"=>"Nanda", "last_name"=>"Tirodkar", "age"=>55, "gender"=>"F", "qualification"=>"BSc", "occupation"=>"HomeMaker", "address"=>"Vile Parle", "mobile_number"...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.013068981s
+  [1m[32mSOLR Request (11.7ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d552eec8d42519d6c339b
+  [1m[32mSOLR Request (540.9ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 578ms
+
+
+Started GET "/users/5b1d552eec8d42519d6c339b" for 127.0.0.1 at 2018-06-10 22:13:26 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d552eec8d42519d6c339b"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d552eec8d42519d6c339b')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000594624s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 29.6ms | Solr: 552.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:13:29 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (9.5ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000899589s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 69ms (Views: 52.9ms | Solr: 9.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 22:13:32 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.1ms)
+  Rendered users/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 42ms (Views: 40.2ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 22:13:55 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XXt+NYFQDCOVkogUIM1AoSPQ+zMDWRF1qxWDonUsxXQmniXoHbP0DHmE3FWG/eHJxxyYx+X0QitSx9YKZqqCfA==", "user"=>{"first_name"=>"Krishna", "last_name"=>"Prabha", "age"=>"59", "gender"=>"f", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"", "email_id"=>""}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>""}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0008849460000000001s
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (13.5ms)
+  Rendered users/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 48ms (Views: 42.2ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 22:14:40 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hKKvDGNC6rRfoN711c/IGBhVCEypOkJonObmkayR3/jPmfjqdiqCb6tRDEor+FZafl0UR+Vqrza/5fTU3ASuhw==", "user"=>{"first_name"=>"Krishna", "last_name"=>"Prabha", "age"=>"59", "gender"=>"f", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"", "email_id"=>"er.ter@t.in"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"er.ter@t.in"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000638048s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d5578ec8d42519d6c339c'), "first_name"=>"Krishna", "last_name"=>"Prabha", "age"=>59, "gender"=>"f", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"", "email_id"=>"er....
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.000465341s
+  [1m[32mSOLR Request (17.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d5578ec8d42519d6c339c
+  [1m[32mSOLR Request (595.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 623ms
+
+
+Started GET "/users/5b1d5578ec8d42519d6c339c" for 127.0.0.1 at 2018-06-10 22:14:40 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d5578ec8d42519d6c339c"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d5578ec8d42519d6c339c')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000707894s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 36ms (Views: 31.3ms | Solr: 612.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:14:42 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (11.7ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001146525s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 52ms (Views: 28.6ms | Solr: 11.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 22:14:44 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.0ms)
+  Rendered users/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 34ms (Views: 32.3ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 22:15:38 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EAeJMaTIiB/ZBLVZsG7Omr1kCQVGDfK3fMb0O1WKi/Fr4tLsOCtwMDUS4RgWXm/yWahq8aCgoemFFKGTRgzM+Q==", "user"=>{"first_name"=>"Naruto", "last_name"=>"Uzumaki", "age"=>"23", "gender"=>"m", "qualification"=>"sports", "occupation"=>"ninja", "address"=>"", "mobile_number"=>"", "email_id"=>"ewer@er.jp"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"ewer@er.jp"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000921642s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d55b2ec8d42519d6c339d'), "first_name"=>"Naruto", "last_name"=>"Uzumaki", "age"=>23, "gender"=>"m", "qualification"=>"sports", "occupation"=>"ninja", "address"=>"", "mobile_number"=>"", "emai...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.054746748s
+  [1m[32mSOLR Request (13.1ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d55b2ec8d42519d6c339d
+  [1m[32mSOLR Request (562.7ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 644ms
+
+
+Started GET "/users/5b1d55b2ec8d42519d6c339d" for 127.0.0.1 at 2018-06-10 22:15:38 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d55b2ec8d42519d6c339d"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d55b2ec8d42519d6c339d')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000867755s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 51ms (Views: 43.5ms | Solr: 575.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:16:31 +0530
+Processing by UsersController#index as HTML
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0009052769999999999s
+  [1m[32mSOLR Request (35.2ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (15.6ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001580198s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (11.7ms)
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:16:31 +0530
+  [1m[32mSOLR Request (573.9ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 200 OK in 709ms (Views: 56.4ms | Solr: 50.8ms)
+
+
+Processing by UsersController#index as HTML
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000598525s
+  [1m[32mSOLR Request (18.0ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (6.9ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000985893s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (6.3ms)
+  [1m[32mSOLR Request (533.1ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 200 OK in 617ms (Views: 32.5ms | Solr: 24.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 22:18:10 +0530
+Processing by UsersController#new as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.017615411s
+  [1m[32mSOLR Request (176.1ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (196.1ms)
+  Rendered users/new.html.erb within layouts/application (199.7ms)
+  [1m[32mSOLR Request (622.0ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 200 OK in 1584ms (Views: 622.8ms | Solr: 176.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 22:18:56 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aMKw1BHsYKBVnKUJJgKfKREAXq5FuYmsun6lxg6r5VoTJ+sJjQ+Yj7mK8UiAMj5B9cw9WqMU2vJDrPBuHS2iUg==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"26", "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"+91 8779641757", "email_id"=>"gt@tt"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"gt@tt"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.00047761s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d5678ec8d427bcaf4a17b'), "first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>26, "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Build...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.018931535s
+  [1m[32mSOLR Request (39.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d5678ec8d427bcaf4a17b
+  [1m[32mSOLR Request (450.9ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 520ms
+
+
+Started GET "/users/5b1d5678ec8d427bcaf4a17b" for 127.0.0.1 at 2018-06-10 22:18:57 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d5678ec8d427bcaf4a17b"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d5678ec8d427bcaf4a17b')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000555485s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 33ms (Views: 28.4ms | Solr: 490.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:18:59 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (9.0ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.00087982s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 54ms (Views: 38.1ms | Solr: 9.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:36:27 +0530
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001776207s
+  [1m[32mSOLR Request (84.9ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (8.6ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.003662896s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (7.8ms)
+  [1m[32mSOLR Request (780.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 200 OK in 1411ms (Views: 380.0ms | Solr: 93.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=prasad" for 127.0.0.1 at 2018-06-10 22:36:37 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"prasad"}
+  [1m[32mSOLR Request (153.5ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"prasad"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text last_name_text age_text gender_text qualification_text occupation_text address_text mobile_number_text email_id_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d5678ec8d427bcaf4a17b')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000685481s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 193ms (Views: 34.1ms | Solr: 934.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=ggtirodkar" for 127.0.0.1 at 2018-06-10 22:36:51 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ggtirodkar"}
+  [1m[32mSOLR Request (9.4ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"ggtirodkar"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text last_name_text age_text gender_text qualification_text occupation_text address_text mobile_number_text email_id_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.045983576000000005s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 89ms (Views: 29.2ms | Solr: 9.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=gaya" for 127.0.0.1 at 2018-06-10 22:36:56 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"gaya"}
+  [1m[32mSOLR Request (10.3ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"gaya"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text last_name_text age_text gender_text qualification_text occupation_text address_text mobile_number_text email_id_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 37.4ms | Solr: 10.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=kann" for 127.0.0.1 at 2018-06-10 22:37:00 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"kann"}
+  [1m[32mSOLR Request (9.4ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"kann"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text last_name_text age_text gender_text qualification_text occupation_text address_text mobile_number_text email_id_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 41ms (Views: 28.3ms | Solr: 9.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=kannan" for 127.0.0.1 at 2018-06-10 22:37:04 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"kannan"}
+  [1m[32mSOLR Request (10.6ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"kannan"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text last_name_text age_text gender_text qualification_text occupation_text address_text mobile_number_text email_id_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1d5496ec8d42519d6c3399')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000708753s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 51ms (Views: 33.4ms | Solr: 10.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-10 22:40:52 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (9.0ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0007014500000000001s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 54ms (Views: 38.0ms | Solr: 9.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 22:40:56 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (255.2ms)
+  Rendered users/new.html.erb within layouts/application (257.5ms)
+Completed 200 OK in 284ms (Views: 282.6ms | Solr: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:41:03 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (6.8ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0013269479999999999s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 56ms (Views: 42.3ms | Solr: 6.8ms)
+
+
+Started GET "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 22:41:05 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000792486s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 43ms (Views: 38.0ms | Solr: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 22:41:08 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (9.2ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001422609s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 67ms (Views: 51.8ms | Solr: 9.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=Prasad" for 127.0.0.1 at 2018-06-10 22:41:27 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Prasad"}
+  [1m[32mSOLR Request (9.6ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"Prasad"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text last_name_text age_text gender_text qualification_text occupation_text address_text mobile_number_text email_id_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d5678ec8d427bcaf4a17b')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000962928s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 48ms (Views: 32.4ms | Solr: 9.6ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=prasad" for 127.0.0.1 at 2018-06-10 22:41:34 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"prasad"}
+  [1m[32mSOLR Request (8.2ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, q: [1m[1m"prasad"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"first_name_text last_name_text age_text gender_text qualification_text occupation_text address_text mobile_number_text email_id_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d5678ec8d427bcaf4a17b')]}}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0011881069999999999s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 54ms (Views: 36.6ms | Solr: 8.2ms)
+
+

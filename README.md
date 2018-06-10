@@ -1,24 +1,8 @@
-# README
+#Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a very basic query engine application to execute real time queries on the user data.
 
-Things you may want to cover:
+To get this application running follow the below steps:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Execute rails server
+2. Open the browser and type 'http://localhost:3000/'

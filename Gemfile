@@ -33,10 +33,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'mongoid', '~> 6.1.0'
 gem 'enumerize'
 gem 'phony_rails'
+gem 'sunspot_rails'
+gem 'sunspot_mongoid'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sunspot_solr'
+
 end
 
 group :development do
