@@ -2384,3 +2384,22 @@ MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000
 Completed 200 OK in 55ms (Views: 35.8ms | Solr: 12.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-06-11 01:02:03 +0530
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001718912s
+  [1m[32mSOLR Request (250.8ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (7.4ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.002649005s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (20.3ms)
+  [1m[32mSOLR Request (1460.6ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 200 OK in 2655ms (Views: 479.0ms | Solr: 258.2ms)
+
+
