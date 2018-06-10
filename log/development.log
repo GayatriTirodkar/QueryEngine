@@ -1992,3 +1992,395 @@ MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000
 Completed 200 OK in 65ms (Views: 43.6ms | Solr: 12.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-06-11 00:28:40 +0530
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.396584672s
+  [1m[32mSOLR Request (553.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (38.8ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.097399185s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (42.0ms)
+Completed 500 Internal Server Error in 1756ms
+
+
+  
+ActionView::Template::Error (Missing partial users/_user with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/gayatri/Desktop/Gayatri/QueryEngine/QueryEngine/app/views"
+):
+    52: <%= link_to 'New User', new_user_path %>
+    53: 
+    54: <div id="results">
+    55:   <%= render @users %>
+    56: </div>
+    57: <%= will_paginate @users %>
+    58: <%= pageless(@users.total_pages, users_path, '#results') %>
+  
+app/views/users/index.html.erb:55:in `_app_views_users_index_html_erb__1407712239161353291_47155736141960'
+Started GET "/" for 127.0.0.1 at 2018-06-11 00:29:40 +0530
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0012479980000000002s
+  [1m[32mSOLR Request (34.0ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (9.0ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000988079s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 121ms
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    52: <%= link_to 'New User', new_user_path %>
+    53: 
+    54: <div id="results">
+    55:   <%= render @posts %>
+    56: </div>
+    57: <%= will_paginate @posts %>
+    58: <%= pageless(@posts.total_pages, posts_path, '#results') %>
+  
+app/views/users/index.html.erb:55:in `_app_views_users_index_html_erb__4268711797102329497_70349321366440'
+Started GET "/" for 127.0.0.1 at 2018-06-11 00:29:44 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (10.4ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0009425480000000001s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 28ms
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    52: <%= link_to 'New User', new_user_path %>
+    53: 
+    54: <div id="results">
+    55:   <%= render @posts %>
+    56: </div>
+    57: <%= will_paginate @posts %>
+    58: <%= pageless(@posts.total_pages, posts_path, '#results') %>
+  
+app/views/users/index.html.erb:55:in `_app_views_users_index_html_erb__4268711797102329497_47090077539320'
+Started GET "/" for 127.0.0.1 at 2018-06-11 00:36:32 +0530
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001307123s
+  [1m[32mSOLR Request (54.7ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (7.5ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0023493140000000003s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (6.9ms)
+  [1m[32mSOLR Request (912.9ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 200 OK in 1619ms (Views: 553.4ms | Solr: 62.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-11 00:36:47 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+Started GET "/users/new" for 127.0.0.1 at 2018-06-11 00:36:47 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (244.2ms)
+  Rendered users/_form.html.erb (7.4ms)
+  Rendered users/new.html.erb within layouts/application (256.2ms)
+  Rendered users/new.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 300ms (Views: 290.9ms | Solr: 912.9ms)
+
+
+Completed 200 OK in 93ms (Views: 91.7ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-11 00:37:12 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w28rpLrZRQw9TsxeqiX3S7i3fnASwYGPATQpive+Yji4inB5Jjq9I9FYmB8MFVYjXHsdhPRs0tH45nwi5DglMA==", "user"=>{"first_name"=>"Manali", "last_name"=>"Dabholkar", "age"=>"", "gender"=>"", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8097357342", "email_id"=>"erw"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"mobile_number"=>"+91 8097357342"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.012884004s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"erw"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000580027s
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.3ms)
+  Rendered users/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 79ms (Views: 33.1ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-11 00:37:33 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y9MfW00eLwTOHVa8/wIRcf01LSFXdZntFV3puDk9GtCA6Ei9WHZH3zrshAMBNY8zmz0xKhsldLM2Xvv9Sahrrw==", "user"=>{"first_name"=>"Manali", "last_name"=>"Dabholkar", "age"=>"23", "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"+91 8097357342", "email_id"=>"erw"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"mobile_number"=>"+91 8097357342"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0008169s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"erw"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000803667s
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.8ms)
+  Rendered users/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 59ms (Views: 47.1ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-11 00:37:40 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Xj4UEWAhE1b/zl+EuwsO21TONtiFAu1kdQ/ELVTDGm6Q6+2UOjslq8O68Hs27J5C1sk0C5E5uuy1y1VxcZ9Fg==", "user"=>{"first_name"=>"Manali", "last_name"=>"Dabholkar", "age"=>"23", "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"+91 8097357341", "email_id"=>"erw"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"mobile_number"=>"+91 8097357341"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000875327s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"erw"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000727335s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d76fcec8d423eabcc6420'), "first_name"=>"Manali", "last_name"=>"Dabholkar", "age"=>23, "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"103, Prasad Building, Vile Parle East,...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.500842619s
+  [1m[32mSOLR Request (8.7ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d76fcec8d423eabcc6420
+  [1m[32mSOLR Request (479.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 1002ms
+
+
+Started GET "/users/5b1d76fcec8d423eabcc6420" for 127.0.0.1 at 2018-06-11 00:37:41 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d76fcec8d423eabcc6420"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d76fcec8d423eabcc6420')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.012651288s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 50ms (Views: 26.1ms | Solr: 488.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-11 00:37:43 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (120.2ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000860741s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 164ms (Views: 34.8ms | Solr: 120.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-11 00:37:46 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.9ms)
+  Rendered users/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 110ms (Views: 108.6ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-11 00:38:17 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"506xdvWagSo0IFb3nyYk6RSCiOCex82jhAOi/RkzxPicq+qraXl5Bdg2ArY5FoWB8E7rFHhqnv190fdVCrWD8A==", "user"=>{"first_name"=>"Pranita", "last_name"=>"Dabholkar", "age"=>"54", "gender"=>"Female", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8097357323", "email_id"=>"er"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"mobile_number"=>"+91 8097357323"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000756624s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"er"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000776563s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d7721ec8d423eabcc6421'), "first_name"=>"Pranita", "last_name"=>"Dabholkar", "age"=>54, "gender"=>"Female", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8097357...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.0008212479999999999s
+  [1m[32mSOLR Request (9.8ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d7721ec8d423eabcc6421
+  [1m[32mSOLR Request (563.1ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 588ms
+
+
+Started GET "/users/5b1d7721ec8d423eabcc6421" for 127.0.0.1 at 2018-06-11 00:38:18 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d7721ec8d423eabcc6421"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d7721ec8d423eabcc6421')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000716099s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 29.7ms | Solr: 572.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-11 00:38:20 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (8.6ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000896889s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 55ms (Views: 27.2ms | Solr: 8.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-11 00:38:26 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (13.7ms)
+  Rendered users/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 57ms (Views: 54.4ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-11 00:38:56 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sfper8zK+jaHwKiwue4rrZU0wgnFuQ01ZjlN+2Ts4BgyHwVyUCkCGWvW/PEf3orFcfih/SMUXmuf6xhTd2qnEA==", "user"=>{"first_name"=>"Gurudatta", "last_name"=>"Tirodkar", "age"=>"57", "gender"=>"M", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8779641723", "email_id"=>"tr"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"mobile_number"=>"+91 8779641723"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0007424900000000001s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"tr"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000726902s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d7748ec8d423eabcc6422'), "first_name"=>"Gurudatta", "last_name"=>"Tirodkar", "age"=>57, "gender"=>"M", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8779641723"...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.000747248s
+  [1m[32mSOLR Request (11.2ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d7748ec8d423eabcc6422
+  [1m[32mSOLR Request (619.2ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 648ms
+
+
+Started GET "/users/5b1d7748ec8d423eabcc6422" for 127.0.0.1 at 2018-06-11 00:38:57 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d7748ec8d423eabcc6422"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d7748ec8d423eabcc6422')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000710662s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 30.2ms | Solr: 630.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-11 00:38:59 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (46.0ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000794875s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 84ms (Views: 32.1ms | Solr: 46.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-11 00:39:02 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.6ms)
+  Rendered users/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 51ms (Views: 50.0ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-11 00:39:47 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ynh+JfclpNj+x+l3XcZSfad7pACFYbujaF0jdtU5LqMZnSX4a8Zc9xLRvTb79vMVQ7fH9GPM6P2Rj3bexr9pqw==", "user"=>{"first_name"=>"Narasimha", "last_name"=>"Prasad", "age"=>"60", "gender"=>"Male", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8097357389", "email_id"=>"u"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"mobile_number"=>"+91 8097357389"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.002075027s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"u"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000907995s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d777bec8d423eabcc6423'), "first_name"=>"Narasimha", "last_name"=>"Prasad", "age"=>60, "gender"=>"Male", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8097357389...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.00066605s
+  [1m[32mSOLR Request (6.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d777bec8d423eabcc6423
+  [1m[32mSOLR Request (653.7ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 675ms
+
+
+Started GET "/users/5b1d777bec8d423eabcc6423" for 127.0.0.1 at 2018-06-11 00:39:47 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d777bec8d423eabcc6423"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d777bec8d423eabcc6423')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000685372s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 42ms (Views: 37.5ms | Solr: 660.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-11 00:39:49 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (14.8ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001286983s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 80ms (Views: 43.0ms | Solr: 14.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-11 00:39:54 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.1ms)
+  Rendered users/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 38ms (Views: 36.1ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-11 00:40:20 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YGHjCu/cnSTmBRZ2Vn33zGhjpzDTBnEhyPiOoN6ltDQbhLjXcz9lCwoTQjfwTVakjK/ExDWrIn8xKtsIzSPzPA==", "user"=>{"first_name"=>"karthik", "last_name"=>"Piedy", "age"=>"29", "gender"=>"M", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8779641709", "email_id"=>"qwe"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"mobile_number"=>"+91 8779641709"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000676963s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"qwe"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000942012s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d779cec8d423eabcc6424'), "first_name"=>"karthik", "last_name"=>"Piedy", "age"=>29, "gender"=>"M", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8779641709", "em...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.000661309s
+  [1m[32mSOLR Request (9.2ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d779cec8d423eabcc6424
+  [1m[32mSOLR Request (613.2ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 641ms
+
+
+Started GET "/users/5b1d779cec8d423eabcc6424" for 127.0.0.1 at 2018-06-11 00:40:21 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d779cec8d423eabcc6424"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d779cec8d423eabcc6424')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000544873s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 40ms (Views: 36.4ms | Solr: 622.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-11 00:40:22 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (13.3ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001261389s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 74ms (Views: 51.4ms | Solr: 13.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-11 00:40:26 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (14.6ms)
+  Rendered users/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 54ms (Views: 52.3ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-11 00:44:01 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jNPgkRWEEfBvp2Od3Bvqp6UKf0JKZgyQtFUEqp0Zgbn3NrtMiWfp34OxN9x6K0vPQcYctqzLX85Nh1ECjp/GsQ==", "user"=>{"first_name"=>"Kannan", "last_name"=>"Piedy", "age"=>"29", "gender"=>"M", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8097357311", "email_id"=>"12"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"mobile_number"=>"+91 8097357311"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000731653s
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email_id"=>"12"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000699479s
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1d7879ec8d423eabcc6425'), "first_name"=>"Kannan", "last_name"=>"Piedy", "age"=>29, "gender"=>"M", "qualification"=>"", "occupation"=>"", "address"=>"", "mobile_number"=>"+91 8097357311", "ema...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.07807678700000001s
+  [1m[32mSOLR Request (6.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Redirected to http://localhost:3000/users/5b1d7879ec8d423eabcc6425
+  [1m[32mSOLR Request (631.3ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+Completed 302 Found in 730ms
+
+
+Started GET "/users/5b1d7879ec8d423eabcc6425" for 127.0.0.1 at 2018-06-11 00:44:01 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1d7879ec8d423eabcc6425"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1d7879ec8d423eabcc6425')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000765489s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 55ms (Views: 50.5ms | Solr: 637.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-11 00:44:03 +0530
+Processing by UsersController#index as HTML
+  [1m[32mSOLR Request (12.7ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:User"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), BSON::ObjectId('5b1d5496ec8d42519d6c3399'), BSON::ObjectId('5b1d54f8ec8d42519d6c339a'), BSON::ObjectId('5b1d552eec8d42519d6c339b'), BSON::ObjectId('5b1d5578ec8d42...
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000983243s
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 55ms (Views: 35.8ms | Solr: 12.7ms)
+
+

@@ -13,3 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+$('#results').pageless({ totalPages: 10
+                       , url: '/articles/'
+                       , loaderMsg: 'Loading more results'
+                       });
