@@ -1,0 +1,698 @@
+Started GET "/users/1" for 127.0.0.1 at 2018-06-10 14:40:12 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"1"}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.086267512s
+Completed 404 Not Found in 141ms
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document(s) not found for class User with id(s) 1.
+summary:
+  When calling User.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): 1 ... (1 total) and the following ids were not found: 1.
+resolution:
+  Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples.):
+  
+app/controllers/users_controller.rb:67:in `set_user'
+Started GET "/" for 127.0.0.1 at 2018-06-10 14:40:16 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/gayatri/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
+Completed 200 OK in 10ms (Views: 6.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 14:40:24 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000560573s
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1712ms (Views: 1710.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 14:40:35 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (93.0ms)
+  Rendered users/new.html.erb within layouts/application (95.4ms)
+Completed 200 OK in 123ms (Views: 120.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 14:42:11 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jFeBUYzcgb8bFOL/eV/gdOplz3OUe8wbY/NOJEi1A9i6idmsrfjeo2aE8SAJ2Bdrb/pWgFTuoCgcQgBvKubuRw==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"26", "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Building", "city"=>"Mumbai", "state"=>"Maharashtra", "pincode"=>"4000057", "mobile_number"=>"8779641757", "email_id"=>"ggtirodkar@gmail.com"}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480'), "first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>26, "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Build...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.443767976s
+Redirected to http://localhost:3000/users/5b1ceb6bec8d4237d0f07480
+Completed 302 Found in 449ms
+
+
+Started GET "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 14:42:12 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0005566490000000001s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 34ms (Views: 30.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 14:42:14 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0009969010000000001s
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 42ms (Views: 39.7ms)
+
+
+Started GET "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 14:42:20 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000623357s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 36.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-10 14:42:23 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000713579s
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 67ms (Views: 64.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-10 15:19:44 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0013522130000000001s
+  Rendered users/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 346ms (Views: 299.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-10 15:29:27 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 41ms
+
+
+  
+NoMethodError (undefined method `enumerize' for User:Class
+Did you mean?  enum_for):
+  
+app/models/user.rb:16:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 15:29:50 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 37ms
+
+
+  
+NoMethodError (undefined method `enumerize' for User:Class
+Did you mean?  enum_for):
+  
+app/models/user.rb:16:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 15:33:30 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0014891s
+  Rendered users/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 432ms (Views: 305.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 15:33:33 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (41.1ms)
+  Rendered users/new.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 68ms (Views: 66.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 15:33:38 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W6ZY+99aJ4XiXunDO4boZdLDNiTq4IAvt0kHIyrxEitteAAG/n54mZ/O+hxLAR96V1yv1yp17BzI+EloSKL/tA==", "user"=>{"first_name"=>"", "last_name"=>"", "age"=>"", "gender"=>"", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"", "email_id"=>""}, "commit"=>"Create User"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (14.1ms)
+  Rendered users/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 47ms (Views: 40.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 15:34:07 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yA6hmmWhQPhSk652VXUOrH2u6H8iSbtbHruGKcbFAE1ZbnGy6PZxtbaMwUeSbAIXvJuaeLY5cTYskymOkHlAEg==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"", "gender"=>"na", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"", "email_id"=>""}, "commit"=>"Create User"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.5ms)
+  Rendered users/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 46ms (Views: 41.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 15:34:30 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Qt776H72GxSuezd+RFwTUnKP12PTy9RIje5EuHG4Ax4a6vHLKzpIbamg+w+CHz2iP9NWhs/5TwQHxa1t3qgUw==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"28", "gender"=>"Female", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"", "email_id"=>""}, "commit"=>"Create User"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (37.5ms)
+  Rendered users/new.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 70ms (Views: 65.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 15:34:40 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FzN85wA2qClMRgAJIgX3CNihsL7z364/Qu/HYf8S79mGU6zPjWGZZKhZbzjlHPuzGZTCuWevZFJwx2jGqa6vhg==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"28", "gender"=>"f", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"", "email_id"=>""}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1cf7b8ec8d42545ab74e11'), "first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>28, "gender"=>"f", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.000925326s
+Redirected to http://localhost:3000/users/5b1cf7b8ec8d42545ab74e11
+Completed 302 Found in 7ms
+
+
+Started GET "/users/5b1cf7b8ec8d42545ab74e11" for 127.0.0.1 at 2018-06-10 15:34:41 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1cf7b8ec8d42545ab74e11"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cf7b8ec8d42545ab74e11')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000659914s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 24.6ms)
+
+
+Started GET "/users/5b1cf7b8ec8d42545ab74e11" for 127.0.0.1 at 2018-06-10 15:52:55 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1cf7b8ec8d42545ab74e11"}
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cf7b8ec8d42545ab74e11')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.003576107s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 229ms (Views: 165.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-10 15:53:03 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.00097782s
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 46ms (Views: 43.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 15:53:06 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (26.1ms)
+  Rendered users/new.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 69ms (Views: 66.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 15:53:30 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o+r5N4qh4rQV3jP1S/cictQlkd5Cf6xMl5a2ENFBNj+VNKHKq4W9qGhOICo7cNVtUboILYLqwH/oJ/hbsxLboA==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"12", "gender"=>"", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"", "email_id"=>""}, "commit"=>"Create User"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.1ms)
+  Rendered users/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 64ms (Views: 59.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-10 15:53:52 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FSBYg/ktFRCiS47Cy4BN3pN75vqROiKkEB3XiixC4uSEQIirdHokXUZU4fMMmUFlUk6U/QVK6MkiNXgtev6iuw==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"13", "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"", "email_id"=>""}, "commit"=>"Create User"}
+MONGODB | localhost:27017 | user_search_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69'), "first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>13, "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=...
+MONGODB | localhost:27017 | user_search_app_development.insert | SUCCEEDED | 0.00080917s
+Redirected to http://localhost:3000/users/5b1cfc38ec8d42638eab1c69
+Completed 302 Found in 10ms
+
+
+Started GET "/users/5b1cfc38ec8d42638eab1c69" for 127.0.0.1 at 2018-06-10 15:53:52 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1cfc38ec8d42638eab1c69"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000628991s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 62ms (Views: 51.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-10 16:05:52 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 45ms
+
+
+  
+NameError (undefined local variable or method `a' for User:Class):
+  
+app/models/user.rb:18:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 16:06:18 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 44ms
+
+
+  
+ArgumentError (Unknown validator: 'DefaultCountryCodeValidator'):
+  
+app/models/user.rb:24:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 16:06:59 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 63ms
+
+
+  
+ArgumentError (Unknown validator: 'DefaultCountryCodeValidator'):
+  
+app/models/user.rb:24:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 16:11:37 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 47ms
+
+
+  
+ArgumentError (Unknown validator: 'DefaultCountryCodeValidator'):
+  
+app/models/user.rb:24:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users/5b1cfc38ec8d42638eab1c69" for 127.0.0.1 at 2018-06-10 16:11:51 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1cfc38ec8d42638eab1c69"}
+Completed 500 Internal Server Error in 12ms
+
+
+  
+ArgumentError (Unknown validator: 'DefaultCountryCodeValidator'):
+  
+app/models/user.rb:24:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:67:in `set_user'
+Started GET "/users" for 127.0.0.1 at 2018-06-10 16:12:50 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 46ms
+
+
+  
+ArgumentError (Unknown validator: 'DefaultCountryCodeValidator'):
+  
+app/models/user.rb:24:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 16:12:53 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 23ms
+
+
+  
+ArgumentError (Unknown validator: 'DefaultCountryCodeValidator'):
+  
+app/models/user.rb:24:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2018-06-10 16:17:13 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.023964091s
+  Rendered users/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 318ms (Views: 305.1ms)
+
+
+Started GET "/users/5b1cfc38ec8d42638eab1c69/edit" for 127.0.0.1 at 2018-06-10 16:17:20 +0530
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5b1cfc38ec8d42638eab1c69"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000813334s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (36.8ms)
+  Rendered users/edit.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 81ms (Views: 65.3ms)
+
+
+Started PATCH "/users/5b1cfc38ec8d42638eab1c69" for 127.0.0.1 at 2018-06-10 16:17:34 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gr2iGykpmvh+0O4V3gMxTSHcxVw/buGjoFkAn2DeFBW57lV++dfEvw1LCKAHFFGYXCs1hDBMPkTiMUC9NZ5GUw==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"13", "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"435213", "email_id"=>""}, "commit"=>"Update User", "id"=>"5b1cfc38ec8d42638eab1c69"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000662745s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.7ms)
+  Rendered users/edit.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 49ms (Views: 41.2ms)
+
+
+Started PATCH "/users/5b1cfc38ec8d42638eab1c69" for 127.0.0.1 at 2018-06-10 16:17:52 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P4tyWHe+i/hGY7m6b+/h0d5sMI03Pl6WoqHw18Bpvzeu66Jw+um6taJ81ouo9u1qH1lCiqNOlPuQiV9wltX/aA==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"13", "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"987645", "email_id"=>""}, "commit"=>"Update User", "id"=>"5b1cfc38ec8d42638eab1c69"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000629872s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.8ms)
+  Rendered users/edit.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 51ms (Views: 43.2ms)
+
+
+Started PATCH "/users/5b1cfc38ec8d42638eab1c69" for 127.0.0.1 at 2018-06-10 16:18:08 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cg+jZMiqmHg4cWFR8gzBKu8ZGT24ZfsTKZiVmVRWhEabb3NMRf2pNdxuDmA1Fc2RLixrOiwVMX4bsDo+AurEGQ==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"13", "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"9869294038", "email_id"=>""}, "commit"=>"Update User", "id"=>"5b1cfc38ec8d42638eab1c69"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000610382s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (14.1ms)
+  Rendered users/edit.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 43ms (Views: 37.4ms)
+
+
+Started PATCH "/users/5b1cfc38ec8d42638eab1c69" for 127.0.0.1 at 2018-06-10 16:18:19 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DAYsIEhJqwBdPxR07CTxOxpVQz7wfNel9PP9o7Pg2YOdZvwIxR6aTbkge0UrPf2A22AxOWQMHcjG21IE5VyZ3A==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"13", "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"6113446", "email_id"=>""}, "commit"=>"Update User", "id"=>"5b1cfc38ec8d42638eab1c69"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000717884s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (11.9ms)
+  Rendered users/edit.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 49ms (Views: 42.6ms)
+
+
+Started PATCH "/users/5b1cfc38ec8d42638eab1c69" for 127.0.0.1 at 2018-06-10 16:18:39 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iktZ1c4mmAWlJOCNpyEGuucmdn4fVUFL6BZiDlMWn/MbK4n9Q3GpSEE7j7xgOAoBJhMEeYsliybaPs2pBarfrA==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"13", "gender"=>"F", "qualification"=>"", "occupation"=>"", "address"=>"", "city"=>"", "state"=>"", "pincode"=>"", "mobile_number"=>"+91 8779641757", "email_id"=>""}, "commit"=>"Update User", "id"=>"5b1cfc38ec8d42638eab1c69"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000786027s
+MONGODB | localhost:27017 | user_search_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}, "u"=>{"$set"=>{"mobile_number"=>"+91 8779641757"}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | user_search_app_development.update | SUCCEEDED | 0.229642988s
+Redirected to http://localhost:3000/users/5b1cfc38ec8d42638eab1c69
+Completed 302 Found in 239ms
+
+
+Started GET "/users/5b1cfc38ec8d42638eab1c69" for 127.0.0.1 at 2018-06-10 16:18:39 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1cfc38ec8d42638eab1c69"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1cfc38ec8d42638eab1c69')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000833415s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 28ms (Views: 22.7ms)
+
+
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.createIndexes | STARTED | {"createIndexes"=>"users", "indexes"=>[{"key"=>{"coordinates"=>"2d"}, "min"=>-180, "max"=>180, "name"=>"coordinates_2d"}]}
+MONGODB | localhost:27017 | user_search_app_development.createIndexes | SUCCEEDED | 0.787785799s
+MONGOID: Created indexes on User:
+MONGOID: Index: {:coordinates=>"2d"}, Options: {:min=>-180, :max=>180}
+Started GET "/" for 127.0.0.1 at 2018-06-10 16:29:19 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001534744s
+  Rendered users/index.html.erb within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 95ms
+
+
+  
+ActionView::Template::Error (undefined method `city' for #<User:0x0055b9ac9aebb8>):
+    31:         <td><%= user.qualification %></td>
+    32:         <td><%= user.occupation %></td>
+    33:         <td><%= user.address %></td>
+    34:         <td><%= user.city %></td>
+    35:         <td><%= user.state %></td>
+    36:         <td><%= user.pincode %></td>
+    37:         <td><%= user.mobile_number %></td>
+  
+app/views/users/index.html.erb:34:in `block in _app_views_users_index_html_erb___3277147584744025742_47127976807440'
+app/views/users/index.html.erb:25:in `_app_views_users_index_html_erb___3277147584744025742_47127976807440'
+Started GET "/" for 127.0.0.1 at 2018-06-10 16:34:34 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.00126067s
+  Rendered users/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 324ms (Views: 275.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-06-10 16:34:46 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (23.5ms)
+  Rendered users/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 52ms (Views: 49.9ms)
+
+
+Started GET "/users/5b1ceb6bec8d4237d0f07480/edit" for 127.0.0.1 at 2018-06-10 16:34:52 +0530
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000782818s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (13.1ms)
+  Rendered users/edit.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 51ms (Views: 45.4ms)
+
+
+Started PATCH "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 16:35:05 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kv2nNhpsJ7zVbRpmxJOFZLz+aDj+VgGMqjkzBnWsDa56g01EKYSMiCuik9bU8yAhQ+F0Oofs/SC/DwnnPpgFsg==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"26", "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"Prasad Building", "mobile_number"=>"8779641757", "email_id"=>"ggtirodkar@gmail.com"}, "commit"=>"Update User", "id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000640877s
+Completed 500 Internal Server Error in 528ms
+
+
+  
+NoMethodError (undefined method `coordinates=' for #<User:0x007ff87817f048>
+Did you mean?  to_coordinates):
+  
+app/controllers/users_controller.rb:44:in `block in update'
+app/controllers/users_controller.rb:43:in `update'
+Started GET "/users" for 127.0.0.1 at 2018-06-10 16:35:28 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001167191s
+  Rendered users/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 44ms (Views: 41.4ms)
+
+
+Started GET "/users/5b1ceb6bec8d4237d0f07480/edit" for 127.0.0.1 at 2018-06-10 16:35:30 +0530
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.00067997s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (14.5ms)
+  Rendered users/edit.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 48ms (Views: 43.3ms)
+
+
+Started PATCH "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 16:36:04 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o2zYFJUyC/DWrKKL0hcbSyJoZ/kaGmZzXkaxu3y9bhRLEjJmptqgxChjKzvCd74O3Xd7+2Ogmt9LcItaN4lmCA==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"26", "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"8779641757", "email_id"=>"ggtirodkar@gmail.com"}, "commit"=>"Update User", "id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000717504s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.6ms)
+  Rendered users/edit.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 1069ms (Views: 46.6ms)
+
+
+Started PATCH "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 16:36:21 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KDRsCG9TVNWTsj0ybZTRsTkck7t2dgOjmzGEF4u4xxy5VLwg4gRlmHetUgOqjd0K+CnhvOIGyc6pGSuw3QSHQw==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"26", "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"+91 8779641757", "email_id"=>"ggtirodkar@gmail.com"}, "commit"=>"Update User", "id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000791183s
+Completed 500 Internal Server Error in 2096ms
+
+
+  
+NoMethodError (undefined method `coordinates=' for #<User:0x007ff88d6e1d78>
+Did you mean?  to_coordinates):
+  
+app/controllers/users_controller.rb:44:in `block in update'
+app/controllers/users_controller.rb:43:in `update'
+Started GET "/" for 127.0.0.1 at 2018-06-10 17:12:29 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0015457119999999999s
+  Rendered users/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 364ms (Views: 290.4ms)
+
+
+Started GET "/users/5b1ceb6bec8d4237d0f07480/edit" for 127.0.0.1 at 2018-06-10 17:12:34 +0530
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000640762s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.8ms)
+  Rendered users/edit.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 49ms (Views: 44.1ms)
+
+
+Started PATCH "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 17:12:50 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qe/G6HSjlSZm/5GwV5hc1oBJTHBdc5al2l88NVZ1bnCpkSyaR0s+EpgwGABH+PmTf1ZQciTJagnPaQbUHUFmbA==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"26", "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"+91 8779641757", "email_id"=>"ggtirodkar@gmail.com"}, "commit"=>"Update User", "id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000537758s
+Completed 500 Internal Server Error in 4ms
+
+
+  
+Mongoid::Errors::InvalidValue (
+message:
+  Value of type String cannot be written to a field of type Array
+summary:
+  Tried to set a value of type String to a field of type Array
+resolution:
+  Verify if the value to be set correspond to field definition):
+  
+app/controllers/users_controller.rb:44:in `block in update'
+app/controllers/users_controller.rb:43:in `update'
+Started GET "/" for 127.0.0.1 at 2018-06-10 17:15:20 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0012194880000000001s
+  Rendered users/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 345ms (Views: 292.3ms)
+
+
+Started GET "/users/5b1ceb6bec8d4237d0f07480/edit" for 127.0.0.1 at 2018-06-10 17:15:23 +0530
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000543444s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (21.0ms)
+  Rendered users/edit.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 53ms (Views: 49.6ms)
+
+
+Started PATCH "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 17:15:33 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vi/a/p9/p47+jNcrDImSN1I1Yhdj8KIsvW20CIwKBCO+UTCMrJcMugBDXpsc6TdyrSp+FRpKXoCoW47pxz4MPw==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"26", "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"+91 8779641757", "email_id"=>"ggtirodkar@gmail.com"}, "commit"=>"Update User", "id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.0006642849999999999s
+Completed 500 Internal Server Error in 38ms
+
+
+  
+NoMethodError (undefined method `coordinates=' for #<User:0x007f601406ee80>
+Did you mean?  to_coordinates):
+  
+app/controllers/users_controller.rb:44:in `block in update'
+app/controllers/users_controller.rb:43:in `update'
+Started GET "/" for 127.0.0.1 at 2018-06-10 17:17:01 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.001431862s
+  Rendered users/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 331ms (Views: 286.8ms)
+
+
+Started GET "/users/5b1ceb6bec8d4237d0f07480/edit" for 127.0.0.1 at 2018-06-10 17:17:05 +0530
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000602359s
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (24.1ms)
+  Rendered users/edit.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 49ms (Views: 45.2ms)
+
+
+Started PATCH "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 17:17:18 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ttPdRPkChhW74HCsM/XfNZiwp8gY0HQ3rwKbmNiaMa1erTc2yuotIUUv+RwjlXpwZ6+7ymFqiJu6NKF5k645sQ==", "user"=>{"first_name"=>"Gayatri", "last_name"=>"Tirodkar", "age"=>"26", "gender"=>"F", "qualification"=>"B.E", "occupation"=>"Software Developer", "address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"+91 8779641757", "email_id"=>"ggtirodkar@gmail.com"}, "commit"=>"Update User", "id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000670513s
+MONGODB | localhost:27017 | user_search_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}, "u"=>{"$set"=>{"address"=>"103, Prasad Building, Vile Parle East, Mumbai- 400057, Maharashtra", "mobile_number"=>"+91 8779641757"}}, "multi"=>false, "upsert"=>f...
+MONGODB | localhost:27017 | user_search_app_development.update | SUCCEEDED | 0.039173734s
+Redirected to http://localhost:3000/users/5b1ceb6bec8d4237d0f07480
+Completed 302 Found in 47ms
+
+
+Started GET "/users/5b1ceb6bec8d4237d0f07480" for 127.0.0.1 at 2018-06-10 17:17:18 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5b1ceb6bec8d4237d0f07480"}
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5b1ceb6bec8d4237d0f07480')}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.000471763s
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 22.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-10 17:41:36 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | user_search_app_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | user_search_app_development.find | SUCCEEDED | 0.039199181s
+  Rendered users/index.html.erb within layouts/application (73.4ms)
+Completed 200 OK in 916ms (Views: 758.6ms)
+
+
