@@ -2,6 +2,7 @@ tmp
 .bundle
 log/*
 *.log
+solr/*
 solr/pids
 solr/test
 solr/developmet
