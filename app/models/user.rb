@@ -28,14 +28,5 @@ class User
     text :first_name, :last_name, :age, :gender, :qualification, :occupation, :address, :mobile_number, :email_id
   end
   #Sunspot.index(User.all)
-=begin
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['first_name LIKE ?', "%#{search}%"])
-    else
-     find(:all)
-    end
-  end
-=end
 
 end
