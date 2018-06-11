@@ -4,10 +4,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @search = User.solr_search do
-      fulltext params[:search]
+    if params[:search]
+      @search = User.solr_search do
+        fulltext params[:search]
+      end
+      @users = @search.results
+    else
+      @users = User.all
     end
-    @users = @search.results
   end
 
   # GET /users/1
