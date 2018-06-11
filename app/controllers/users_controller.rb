@@ -6,15 +6,8 @@ class UsersController < ApplicationController
   def index
     @search = User.solr_search do
       fulltext params[:search]
-   end
-   @users = @search.results
-=begin
-    if params[:search]
-      @users = User.search(params[:search])
-    else
-      @users = User.all
     end
-=end
+    @users = @search.results
   end
 
   # GET /users/1
