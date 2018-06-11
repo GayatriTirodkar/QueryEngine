@@ -16,7 +16,7 @@ class User
   field :email_id, type: String
 
 
-  enumerize :gender, in: %w(male female m f Male Female M F), scope: true
+  enumerize :gender, in: %w(Male Female), scope: true
 
   validates :first_name, :last_name, presence: true
   validates :age, length: {maximum: 3}, numericality: {only_integer: true}, :on => :create
